@@ -1,0 +1,782 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HYDRALT S.R.L.</title>
+    <link rel="icon" type="image/png" href="Imagen/ICONO_LOGO-REDONDO-PNG.ico">
+    <meta name="description" content="HYDRALT S.R.L. - Venta, instalación, mantenimiento y tratamiento de agua para hogares, empresas e industrias.">
+    <!-- GOOGLE FONT -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- FONT AWESOME -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <!-- SWIPER -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+    <!-- ESCÁNER QR -->
+    <script src="https://unpkg.com/html5-qrcode@2.3.8/html5-qrcode.min.js"></script>
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<!-- =========================================================
+     BOTÓN VOLVER ARRIBA
+========================================================= -->
+<button id="btnTop" class="btn-top">
+    <i class="fa-solid fa-arrow-up"></i>
+</button>
+<!-- =========================================================
+     BARRA SUPERIOR
+========================================================= -->
+<div class="top-bar">
+    <div class="top-bar-container">
+        <div><i class="fa-solid fa-truck-fast"></i> Envíos e instalaciones a todo el Perú</div>
+        <div><i class="fa-solid fa-shield-halved"></i> Garantía y asesoría técnica especializada</div>
+    </div>
+</div>
+<!-- =========================================================
+     HEADER
+========================================================= -->
+<header class="header" id="header">
+    <div class="container nav-container">
+        <a href="#inicio" class="brand"><img src="imagen/LOGO-REDONDO-PNG.png" alt="HYDRALT S.R.L." class="main-logo"></a>
+        <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú"><i class="fa-solid fa-bars"></i></button>
+        <nav class="navbar" id="navbar">
+            <a href="#inicio" class="nav-link active">Inicio</a>
+            <a href="#productos" class="nav-link">Productos</a>
+            <a href="#servicios" class="nav-link">Servicios</a>
+            <a href="#nosotros" class="nav-link">Nosotros</a>
+            <a href="#laboratorio" class="nav-link">Laboratorio</a>
+            <a href="#ubicacion" class="nav-link">Ubicación</a>
+            <a href="#preguntas" class="nav-link">Preguntas</a>
+            <a href="#contacto" class="nav-link">Contacto</a>
+            <button class="admin-access-btn" id="openAdminBtn" title="Sistema administrativo">
+                <i class="fa-solid fa-lock"></i><span id="adminBtnText">Almacén</span>
+            </button>
+        </nav>
+    </div>
+</header>
+<!-- =========================================================
+     HERO
+========================================================= -->
+<section id="inicio" class="hero">
+    <div class="swiper heroSwiper">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide hero-slide" style="background-image: url('Imagen/IMG20250203123014.jpg');">
+                <div class="hero-overlay"></div>
+                <div class="container hero-content">
+                    <span class="hero-badge"><i class="fa-solid fa-droplet"></i> Más de 10 años de experiencia</span>
+                    <h1>HYDRALT <span>Vida saludable</span></h1>
+                    <p>Soluciones profesionales para el tratamiento, purificación y cuidado del agua.</p>
+                    <div class="hero-buttons">
+                        <a href="#productos" class="btn btn-primary"><i class="fa-solid fa-cart-shopping"></i> Ver productos</a>
+                        <a href="#contacto" class="btn btn-outline">Solicitar cotización</a>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-slide hero-slide" style="background-image: url('Imagen/IMG20240616133432_01.jpg');">
+                <div class="hero-overlay"></div>
+                <div class="container hero-content">
+                    <span class="hero-badge"><i class="fa-solid fa-industry"></i> Soluciones industriales</span>
+                    <h1>Tratamiento <span>de agua</span></h1>
+                    <p>Sistemas de filtración y tratamiento adaptados a las necesidades de cada empresa.</p>
+                    <div class="hero-buttons">
+                        <a href="#servicios" class="btn btn-primary">Conocer servicios</a>
+                        <a href="#contacto" class="btn btn-outline">Hablar con un asesor</a>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-slide hero-slide" style="background-image: url('Imagen/IMG20240616133915.jpg');">
+                <div class="hero-overlay"></div>
+                <div class="container hero-content">
+                    <span class="hero-badge"><i class="fa-solid fa-flask"></i> Análisis y asesoría</span>
+                    <h1>Calidad del agua <span>con respaldo técnico</span></h1>
+                    <p>Evaluamos tus necesidades y te ayudamos a encontrar la solución adecuada.</p>
+                    <div class="hero-buttons">
+                        <a href="#laboratorio" class="btn btn-primary">Laboratorio</a>
+                        <a href="#contacto" class="btn btn-outline">Contactarnos</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="swiper-pagination"></div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+    </div>
+</section>
+<!-- =========================================================
+     CARACTERÍSTICAS
+========================================================= -->
+<section class="features">
+    <div class="container features-grid">
+        <div class="feature-card"><div class="feature-icon"><i class="fa-solid fa-award"></i></div><div><h3>Experiencia</h3><p>Más de 10 años en el mercado.</p></div></div>
+        <div class="feature-card"><div class="feature-icon"><i class="fa-solid fa-screwdriver-wrench"></i></div><div><h3>Instalación</h3><p>Servicio técnico especializado.</p></div></div>
+        <div class="feature-card"><div class="feature-icon"><i class="fa-solid fa-headset"></i></div><div><h3>Asesoría</h3><p>Atención personalizada.</p></div></div>
+        <div class="feature-card"><div class="feature-icon"><i class="fa-solid fa-shield-halved"></i></div><div><h3>Garantía</h3><p>Productos y servicio respaldados.</p></div></div>
+    </div>
+</section>
+<!-- =========================================================
+     PRODUCTOS
+========================================================= -->
+<section id="productos" class="section products-section">
+    <div class="container">
+        <div class="section-header">
+            <span class="section-tag">Nuestros productos</span>
+            <h2>Soluciones para cada <span>necesidad</span></h2>
+            <p>Encuentra sistemas y accesorios para el hogar, empresas e industrias.</p>
+        </div>
+        <div class="product-tools">
+            <div class="category-buttons">
+                <button class="category-btn active" data-category="todos">Todos</button>
+                <button class="category-btn" data-category="domesticos">Hogar</button>
+                <button class="category-btn" data-category="industriales">Industrial</button>
+                <button class="category-btn" data-category="valvulas">Válvulas y tanques</button>
+            </div>
+            <div class="search-box">
+                <input type="text" id="buscador" placeholder="Buscar producto...">
+                <button id="buscar-btn"><i class="fa-solid fa-magnifying-glass"></i></button>
+            </div>
+        </div>
+        <div class="swiper productsSwiper">
+            <div class="swiper-wrapper" id="productsGrid"></div>
+            <div class="swiper-pagination"></div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+        </div>
+        <div id="noProducts" class="no-products">
+            <i class="fa-solid fa-box-open"></i>
+            <h3>No encontramos productos</h3>
+            <p>Puedes solicitar una cotización personalizada.</p>
+            <a href="#contacto" class="btn btn-primary">Solicitar cotización</a>
+        </div>
+    </div>
+</section>
+<!-- =========================================================
+     SERVICIOS
+========================================================= -->
+<section id="servicios" class="section services-section">
+    <div class="container">
+        <div class="section-header">
+            <span class="section-tag">Nuestros servicios</span>
+            <h2>Soluciones para <span>tu proyecto</span></h2>
+        </div>
+        <div class="services-grid">
+            <article class="service-card">
+                <div class="service-icon"><i class="fa-solid fa-house"></i></div>
+                <h3>Soluciones para el hogar</h3>
+                <p>Purificadores, filtros, ósmosis inversa y accesorios para mejorar el tratamiento del agua en tu hogar.</p>
+                <a href="#productos">Ver productos <i class="fa-solid fa-arrow-right"></i></a>
+            </article>
+            <article class="service-card">
+                <div class="service-icon"><i class="fa-solid fa-building"></i></div>
+                <h3>Soluciones empresariales</h3>
+                <p>Equipos y sistemas para comercios, instituciones y diferentes necesidades empresariales.</p>
+                <a href="#contacto">Solicitar asesoría <i class="fa-solid fa-arrow-right"></i></a>
+            </article>
+            <article class="service-card">
+                <div class="service-icon"><i class="fa-solid fa-industry"></i></div>
+                <h3>Tratamiento industrial</h3>
+                <p>Filtración, ósmosis inversa, tanques, válvulas y soluciones adaptadas a procesos industriales.</p>
+                <a href="#contacto">Cotizar proyecto <i class="fa-solid fa-arrow-right"></i></a>
+            </article>
+            <article class="service-card">
+                <div class="service-icon"><i class="fa-solid fa-screwdriver-wrench"></i></div>
+                <h3>Mantenimiento</h3>
+                <p>Servicio técnico, mantenimiento preventivo y cambio de componentes para tus sistemas.</p>
+                <a href="#contacto">Solicitar servicio <i class="fa-solid fa-arrow-right"></i></a>
+            </article>
+        </div>
+    </div>
+</section>
+<!-- =========================================================
+     NOSOTROS
+========================================================= -->
+<section id="nosotros" class="section about-section">
+    <div class="container about-grid">
+        <div class="about-image">
+            <div class="about-image-main"><img src="Imagen/IMG20240616133915.jpg" alt="HYDRALT tratamiento de agua"></div>
+            <div class="experience-box"><strong>10+</strong><span>años de<br>experiencia</span></div>
+        </div>
+        <div class="about-content">
+            <span class="section-tag">Sobre HYDRALT</span>
+            <h2>Comprometidos con <span>la calidad del agua</span></h2>
+            <p>En HYDRALT S.R.L. brindamos soluciones para la purificación y tratamiento del agua, atendiendo necesidades residenciales, empresariales e industriales.</p>
+            <p>Nuestro trabajo combina productos, instalación, mantenimiento y asesoría técnica para encontrar alternativas adecuadas para cada cliente.</p>
+            <div class="about-points">
+                <div><i class="fa-solid fa-circle-check"></i> Asesoría técnica</div>
+                <div><i class="fa-solid fa-circle-check"></i> Instalación especializada</div>
+                <div><i class="fa-solid fa-circle-check"></i> Mantenimiento</div>
+                <div><i class="fa-solid fa-circle-check"></i> Soluciones personalizadas</div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- =========================================================
+     LABORATORIO
+========================================================= -->
+<section id="laboratorio" class="section laboratory-section">
+    <div class="container">
+        <div class="laboratory-box">
+            <div class="laboratory-content">
+                <span class="section-tag">Laboratorio</span>
+                <h2>Análisis de calidad <span>del agua</span></h2>
+                <p>Solicita información sobre análisis fisicoquímicos, bacteriológicos, metales pesados y monitoreo.</p>
+                <button class="btn btn-primary" id="openLabBtn"><i class="fa-solid fa-flask"></i> Solicitar análisis</button>
+            </div>
+            <div class="laboratory-icon"><i class="fa-solid fa-flask-vial"></i></div>
+        </div>
+    </div>
+</section>
+<!-- =========================================================
+     PREGUNTAS
+========================================================= -->
+<section id="preguntas" class="section faq-section">
+    <div class="container">
+        <div class="section-header">
+            <span class="section-tag">Preguntas frecuentes</span>
+            <h2>Lo que nuestros clientes <span>quieren saber</span></h2>
+        </div>
+        <div class="faq-list">
+            <div class="faq-item">
+                <button class="faq-question">¿Realizan instalación? <i class="fa-solid fa-chevron-down"></i></button>
+                <div class="faq-answer"><p>Sí. HYDRALT ofrece servicios de instalación y asesoría técnica para diferentes sistemas de tratamiento y purificación.</p></div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question">¿Atienden empresas e industrias? <i class="fa-solid fa-chevron-down"></i></button>
+                <div class="faq-answer"><p>Sí. Se pueden solicitar soluciones para necesidades empresariales e industriales.</p></div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question">¿Puedo solicitar una cotización? <i class="fa-solid fa-chevron-down"></i></button>
+                <div class="faq-answer"><p>Sí. Puedes utilizar el formulario de contacto o comunicarte directamente mediante WhatsApp.</p></div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question">¿Realizan mantenimiento? <i class="fa-solid fa-chevron-down"></i></button>
+                <div class="faq-answer"><p>Sí. Puedes consultar por mantenimiento preventivo, cambio de filtros y otros servicios técnicos.</p></div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- =========================================================
+     UBICACIÓN DE NUESTRAS SEDES
+========================================================= -->
+<section id="ubicacion" class="section stores-section">
+    <div class="container">
+        <div class="section-header">
+            <span class="section-tag">Dónde estamos</span>
+            <h2>Visítanos en <span>Juliaca y Cusco</span></h2>
+            <p>Contamos con atención en nuestras sedes. Escríbenos para confirmar la dirección y coordinar tu visita.</p>
+        </div>
+
+        <div class="stores-grid">
+            <!-- Sede Juliaca -->
+            <article class="store-card">
+                <div class="store-info">
+                    <span class="store-type">Oficina principal</span>
+                    <h3>Juliaca</h3>
+                    <p class="store-name">HYDRALT S.R.L. · Puno</p>
+
+                    <div class="store-line">
+                        <i class="fa-solid fa-location-dot"></i>
+                        <span>Juliaca, Puno, Perú</span>
+                    </div>
+
+                    <div class="store-actions">
+                        <a
+                            class="btn btn-primary"
+                            href="https://www.google.com/maps/search/?api=1&query=HYDRALT%20S.R.L.%20Juliaca%20Puno"
+                            target="_blank"
+                            rel="noopener"
+                        >
+                            <i class="fa-solid fa-map-location-dot"></i>
+                            Cómo llegar
+                        </a>
+                        <a class="btn store-btn-ghost" href="https://wa.me/51987654321" target="_blank" rel="noopener">
+                            <i class="fa-brands fa-whatsapp"></i>
+                            Consultar
+                        </a>
+                    </div>
+                </div>
+
+                <iframe
+                    class="store-map"
+                    src="https://www.google.com/maps?q=HYDRALT%20S.R.L.%20Juliaca%20Puno&output=embed"
+                    title="Mapa de HYDRALT en Juliaca, Puno"
+                    loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"
+                    allowfullscreen>
+                </iframe>
+            </article>
+
+            <!-- Sede Cusco -->
+            <article class="store-card">
+                <div class="store-info">
+                    <span class="store-type">Sucursal</span>
+                    <h3>Cusco</h3>
+                    <p class="store-name">HYDRALT S.R.L. · Cusco</p>
+
+                    <div class="store-line">
+                        <i class="fa-solid fa-location-dot"></i>
+                        <span>Cusco, Perú</span>
+                    </div>
+
+                    <div class="store-actions">
+                        <a
+                            class="btn btn-primary"
+                            href="https://www.google.com/maps/search/?api=1&query=HYDRALT%20S.R.L.%20Cusco"
+                            target="_blank"
+                            rel="noopener"
+                        >
+                            <i class="fa-solid fa-map-location-dot"></i>
+                            Cómo llegar
+                        </a>
+                        <a class="btn store-btn-ghost" href="https://wa.me/51987654321" target="_blank" rel="noopener">
+                            <i class="fa-brands fa-whatsapp"></i>
+                            Consultar
+                        </a>
+                    </div>
+                </div>
+
+                <iframe
+                    class="store-map"
+                    src="https://www.google.com/maps?q=HYDRALT%20S.R.L.%20Cusco&output=embed"
+                    title="Mapa de HYDRALT en Cusco"
+                    loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"
+                    allowfullscreen>
+                </iframe>
+            </article>
+        </div>
+    </div>
+</section>
+
+<!-- =========================================================
+     CONTACTO
+========================================================= -->
+<section id="contacto" class="section contact-section">
+    <div class="container contact-grid">
+        <div class="contact-info">
+            <span class="section-tag">Contáctanos</span>
+            <h2>¿Necesitas una <span>solución?</span></h2>
+            <p>Cuéntanos qué necesitas y nuestro equipo podrá orientarte.</p>
+            <div class="contact-item"><div class="contact-icon"><i class="fa-solid fa-phone"></i></div><div><strong>Teléfono</strong><span>+51 987 654 321</span></div></div>
+            <div class="contact-item"><div class="contact-icon"><i class="fa-solid fa-location-dot"></i></div><div><strong>Juliaca</strong><span>Oficina principal</span></div></div>
+            <div class="contact-item"><div class="contact-icon"><i class="fa-solid fa-building"></i></div><div><strong>Cusco</strong><span>Sucursal</span></div></div>
+            <a href="https://wa.me/51987654321" target="_blank" class="whatsapp-contact"><i class="fa-brands fa-whatsapp"></i> Escribir por WhatsApp</a>
+        </div>
+        <div class="contact-form-box">
+            <form id="form-contacto">
+                <div class="form-row">
+                    <div class="form-group"><label>Nombre completo</label><input type="text" id="nombre" required></div>
+                    <div class="form-group"><label>Teléfono / WhatsApp</label><input type="tel" id="telefono" required></div>
+                </div>
+                <div class="form-group"><label>Correo electrónico</label><input type="email" id="correo"></div>
+                <div class="form-group"><label>¿Qué necesitas?</label><select id="tipoConsulta">
+                    <option value="">Seleccionar</option>
+                    <option value="Producto">Comprar producto</option>
+                    <option value="Instalación">Instalación</option>
+                    <option value="Mantenimiento">Mantenimiento</option>
+                    <option value="Análisis">Análisis de agua</option>
+                    <option value="Proyecto">Proyecto industrial</option>
+                    <option value="Otro">Otro</option>
+                </select></div>
+                <div class="form-group"><label>Mensaje</label><textarea id="mensaje" rows="5" placeholder="Cuéntanos qué necesitas..."></textarea></div>
+                <button type="submit" class="btn btn-primary submit-btn"><i class="fa-brands fa-whatsapp"></i> Enviar solicitud</button>
+            </form>
+        </div>
+    </div>
+</section>
+<!-- =========================================================
+     FOOTER
+========================================================= -->
+<footer class="footer">
+    <div class="container footer-grid">
+        <div class="footer-brand">
+            <img src="imagen/LOGO-REDONDO-PNG.png" alt="HYDRALT S.R.L." class="footer-logo">
+            <p>Soluciones profesionales para el tratamiento y purificación del agua.</p>
+            <div class="footer-social">
+                <a href="https://web.facebook.com/profile.php?id=100049451305623&locale=es_LA" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+                <a href="https://wa.me/51987654321" target="_blank" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+            </div>
+        </div>
+        <div class="footer-column"><h3>Empresa</h3><a href="#nosotros">Nosotros</a><a href="#servicios">Servicios</a><a href="#laboratorio">Laboratorio</a><a href="#contacto">Contacto</a></div>
+        <div class="footer-column"><h3>Productos</h3><a href="#productos">Purificadores</a><a href="#productos">Ósmosis inversa</a><a href="#productos">Filtros</a><a href="#productos">Válvulas y tanques</a></div>
+        <div class="footer-column"><h3>Atención</h3><p>Juliaca - Puno</p><p>Cusco</p><p>Atención nacional</p></div>
+    </div>
+    <div class="footer-bottom"><div class="container"><p>© 2026 HYDRALT S.R.L. Todos los derechos reservados.</p></div></div>
+</footer>
+
+<!--==========================================================
+=====CHATBOT-->
+<!-- CHATBOT -->
+<button class="chatbot-toggle" id="chatbotToggle" type="button" aria-label="Abrir asistente">
+    <i class="fa-solid fa-comments"></i>
+</button>
+
+<div class="voice-listening" id="voiceListening">
+    <i class="fa-solid fa-microphone"></i><p>Te escucho...</p>
+</div>
+
+<div class="chatbot-container" id="chatbotContainer">
+    <div class="chatbot-header">
+        <div>
+            <h3><i class="fa-solid fa-robot"></i> Asistente HYDRALT</h3>
+            <p>Escribe o habla, te respondo con voz</p>
+        </div>
+        <button class="chatbot-close" id="chatbotClose" type="button" aria-label="Cerrar chat">
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+    </div>
+    <div class="chatbot-messages" id="chatbotMessages">
+        <div class="chatbot-message bot">
+            <div class="message-content">
+                <i class="fa-solid fa-robot"></i>
+                <div>
+                    <strong>Asistente HYDRALT</strong>
+                    <p>¡Hola! Pregúntame por productos, precios, instalación, mantenimiento o envíos.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="chatbot-input-area">
+        <button class="voice-btn" id="voiceBtn" type="button" aria-label="Hablar"><i class="fa-solid fa-microphone"></i></button>
+        <input type="text" id="chatbotInput" placeholder="Escribe tu pregunta..." autocomplete="off">
+        <button class="send-btn" id="sendBtn" type="button" aria-label="Enviar"><i class="fa-solid fa-paper-plane"></i></button>
+    </div>
+</div>
+
+<div class="toast-container" id="toastContainer"></div>
+<!-- =========================================================
+     CARRITO
+========================================================= -->
+<button class="floating-cart" id="openCartBtn" title="Ver carrito">
+    <i class="fa-solid fa-cart-shopping"></i><span id="cartBadge">0</span>
+</button>
+<!-- =========================================================
+     MODAL CARRITO
+========================================================= -->
+<div class="modal-overlay" id="cartModal" role="dialog" aria-modal="true" aria-labelledby="cartTitle">
+    <div class="modal cart-modal">
+        <button class="modal-close" data-close="cartModal" aria-label="Cerrar carrito" type="button"><i class="fa-solid fa-xmark"></i></button>
+        <div class="modal-header">
+            <span class="modal-icon"><i class="fa-solid fa-cart-shopping"></i></span>
+            <div><h2 id="cartTitle">Mi carrito</h2><p>Revisa tus productos antes de continuar.</p></div>
+        </div>
+        <div id="cartItems" class="cart-items"></div>
+        <div id="cartEmpty" class="cart-empty"><i class="fa-solid fa-cart-arrow-down"></i><h3>Tu carrito está vacío</h3><p>Agrega productos para continuar con tu compra.</p></div>
+        <div id="cartSummary" class="cart-summary">
+            <div class="cart-total-wrapper"><span>Total a pagar</span><strong id="cartTotal">S/ 0.00</strong></div>
+            <button class="btn btn-primary" id="checkoutBtn" type="button"><i class="fa-solid fa-bag-shopping"></i> Finalizar compra</button>
+            <button class="btn btn-secondary" id="paymentMethodsBtn" type="button" aria-expanded="false" aria-controls="paymentMethodsContent">
+                <i class="fa-solid fa-credit-card"></i> Ver métodos de pago <i class="fa-solid fa-chevron-down payment-arrow"></i>
+            </button>
+            <div id="paymentMethodsContent" class="payment-methods-content" aria-hidden="true">
+                <h3>Elige cómo deseas pagar</h3>
+                <div class="payment-methods-grid">
+                    <div class="payment-method-card">
+                        <div class="payment-method-top"><span class="payment-method-logo yape-logo"><i class="fa-solid fa-mobile-screen-button"></i></span><div><strong>Yape</strong><small>Paga desde tu celular</small></div></div>
+                        <div class="payment-method-data"><span>Titular:</span><strong>HYDRALT s.r.l.</strong><span>Número Yape:</span><strong>999 999 999</strong></div>
+                        <img src="Imagen/YAPE.jpeg" alt="Código QR para pagar por Yape" class="payment-qr">
+                    </div>
+                    <div class="payment-method-card">
+                        <div class="payment-method-top"><span class="payment-method-logo plin-logo"><i class="fa-solid fa-mobile-screen-button"></i></span><div><strong>Plin</strong><small>Paga desde tu celular</small></div></div>
+                        <div class="payment-method-data"><span>Titular:</span><strong>HYDRALT S.R.L.</strong><span>Número Plin:</span><strong>999 999 999</strong></div>
+                        <img src="Imagen/plin-qr.png" alt="Código QR para pagar por Plin" class="payment-qr">
+                    </div>
+                    <div class="payment-method-card">
+                        <div class="payment-method-top"><span class="payment-method-logo bank-logo"><i class="fa-solid fa-building-columns"></i></span><div><strong>Transferencia</strong><small>Depósito o transferencia bancaria</small></div></div>
+                        <div class="payment-method-data"><span>Banco:</span><strong>BCP</strong><span>Titular:</span><strong>TU NOMBRE O EMPRESA</strong><span>Cuenta:</span><strong>000-0000000000</strong><span>CCI:</span><strong>00000000000000000000</strong></div>
+                    </div>
+                    <div class="payment-method-card">
+                        <div class="payment-method-top"><span class="payment-method-logo delivery-logo"><i class="fa-solid fa-truck"></i></span><div><strong>Pago contra entrega</strong><small>Paga cuando recibas el pedido</small></div></div>
+                        <p class="payment-delivery-text">Envía tu pedido por WhatsApp. Coordinaremos contigo la dirección, fecha y hora de entrega.</p>
+                    </div>
+                </div>
+                <div class="payment-note"><i class="fa-solid fa-circle-info"></i><p>Si pagas por Yape, Plin o transferencia, envía tu comprobante por WhatsApp para confirmar el pedido.</p></div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- =========================================================
+     MODAL LABORATORIO
+========================================================= -->
+<div class="modal-overlay" id="labModal">
+    <div class="modal">
+        <button class="modal-close" data-close="labModal"><i class="fa-solid fa-xmark"></i></button>
+        <div class="modal-header">
+            <span class="modal-icon"><i class="fa-solid fa-flask"></i></span>
+            <div><h2>Solicitar análisis</h2><p>Laboratorio HYDRALT</p></div>
+        </div>
+        <form id="labForm">
+            <div class="form-group"><label>Nombre completo</label><input type="text" id="labNombre" required></div>
+            <div class="form-group"><label>Correo electrónico</label><input type="email" id="labCorreo" required></div>
+            <div class="form-group"><label>Teléfono</label><input type="tel" id="labTelefono" required></div>
+            <div class="form-group"><label>Tipo de análisis</label><select id="labTipo" required>
+                <option value="">Seleccionar</option>
+                <option>Fisicoquímico</option>
+                <option>Bacteriológico</option>
+                <option>Metales Pesados</option>
+                <option>Monitoreo</option>
+            </select></div>
+            <div class="form-group"><label>Mensaje</label><textarea id="labMensaje" rows="4"></textarea></div>
+            <button type="submit" class="btn btn-primary submit-btn"><i class="fa-brands fa-whatsapp"></i> Solicitar análisis</button>
+        </form>
+    </div>
+</div>
+<!-- =========================================================
+     MODAL LOGIN
+========================================================= -->
+<div class="modal-overlay" id="loginModal">
+    <div class="modal login-modal">
+        <button class="modal-close" data-close="loginModal"><i class="fa-solid fa-xmark"></i></button>
+        <div class="modal-header">
+            <span class="modal-icon"><i class="fa-solid fa-user-lock"></i></span>
+            <div><h2>Acceso Administrativo</h2><p>Ingresa tu contraseña</p></div>
+        </div>
+        <form id="loginForm">
+            <div class="form-group"><label>Contraseña</label><input type="password" id="loginPassword" placeholder="••••••••" required></div>
+            <p class="login-hint"><i class="fa-solid fa-info-circle"></i> Contraseña por defecto: <strong></strong></p>
+            <button type="submit" class="btn btn-primary submit-btn"><i class="fa-solid fa-right-to-bracket"></i> Ingresar</button>
+        </form>
+    </div>
+</div>
+<!-- =========================================================
+     PANEL ADMINISTRATIVO
+========================================================= -->
+<div class="admin-overlay" id="adminPanel">
+    <div class="admin-layout">
+        <aside class="admin-sidebar">
+            <div class="admin-brand">
+                <img src="imagen/LOGO-REDONDO-PNG.png" alt="HYDRALT">
+                <div><strong>HYDRALT</strong><span>Sistema de Almacén</span></div>
+            </div>
+            <nav class="admin-nav">
+                <button class="admin-nav-btn active" data-admin-section="dashboard"><i class="fa-solid fa-chart-pie"></i> Dashboard</button>
+                <button class="admin-nav-btn" data-admin-section="inventory"><i class="fa-solid fa-boxes-stacked"></i> Inventario</button>
+                <button class="admin-nav-btn" data-admin-section="movements"><i class="fa-solid fa-right-left"></i> Movimientos</button>
+                <button class="admin-nav-btn" data-admin-section="sales"><i class="fa-solid fa-cart-shopping"></i> Ventas</button>
+                <button class="admin-nav-btn" data-admin-section="alerts"><i class="fa-solid fa-triangle-exclamation"></i> Alertas</button>
+            </nav>
+            <div class="admin-sidebar-bottom">
+    <button id="closeAdminBtn" type="button"><i class="fa-solid fa-house"></i> Volver a la página</button>
+    <button id="logoutBtn" type="button"><i class="fa-solid fa-right-from-bracket"></i> Cerrar sesión</button>
+</div>
+        </aside>
+        <main class="admin-main">
+            <header class="admin-header">
+                <div>
+                    <button class="admin-mobile-menu" id="adminMobileMenu"><i class="fa-solid fa-bars"></i></button>
+                    <h1 id="adminPageTitle">Dashboard</h1><p id="adminPageSubtitle">Resumen general de tu almacén.</p>
+                </div>
+                <div class="admin-header-actions">
+                    <span class="admin-date" id="adminDate"></span>
+                    <div class="admin-user">
+                        <div class="admin-user-icon"><i class="fa-solid fa-user"></i></div>
+                        <div><strong>Administrador</strong><span>Sistema HYDRALT</span></div>
+                    </div>
+                </div>
+            </header>
+            <!-- DASHBOARD -->
+            <section class="admin-section active" id="admin-dashboard">
+                <div class="admin-stats">
+                    <div class="admin-stat"><div class="stat-icon blue"><i class="fa-solid fa-box"></i></div><div><span>Productos</span><strong id="statProducts">0</strong></div></div>
+                    <div class="admin-stat"><div class="stat-icon green"><i class="fa-solid fa-boxes-stacked"></i></div><div><span>Unidades en stock</span><strong id="statStock">0</strong></div></div>
+                    <div class="admin-stat"><div class="stat-icon orange"><i class="fa-solid fa-triangle-exclamation"></i></div><div><span>Stock bajo</span><strong id="statLowStock">0</strong></div></div>
+                    <div class="admin-stat"><div class="stat-icon purple"><i class="fa-solid fa-dollar-sign"></i></div><div><span>Valor del inventario</span><strong id="statInventoryValue">S/ 0.00</strong></div></div>
+                </div>
+                <div class="admin-dashboard-grid">
+                    <div class="admin-card">
+                        <div class="admin-card-header"><div><h2>Stock actual</h2><p>Estado de los productos.</p></div><button class="small-btn" data-admin-section-target="inventory">Ver inventario</button></div>
+                        <div class="table-wrapper"><table><thead><tr><th>Producto</th><th>Categoría</th><th>Stock</th><th>Estado</th></tr></thead><tbody id="dashboardStockTable"></tbody></table></div>
+                    </div>
+                    <div class="admin-card">
+                        <div class="admin-card-header"><div><h2>Últimos movimientos</h2><p>Entradas y salidas recientes.</p></div></div>
+                        <div class="movement-list" id="dashboardMovements"></div>
+                    </div>
+                </div>
+            </section>
+            <!-- INVENTARIO -->
+            <section class="admin-section" id="admin-inventory">
+                <div class="admin-toolbar">
+                    <div><h2>Inventario</h2><p>Administra los productos y cantidades en tienda.</p></div>
+                    <div style="display: flex; gap: 10px;">
+                        <button class="admin-primary-btn" id="scanProductBtn"><i class="fa-solid fa-qrcode"></i> Escanear Producto</button>
+                        <button class="admin-primary-btn" id="newProductBtn"><i class="fa-solid fa-plus"></i> Nuevo producto</button>
+                    </div>
+                </div>
+                <div class="admin-card">
+                    <div class="inventory-tools">
+                        <div class="admin-search"><i class="fa-solid fa-magnifying-glass"></i><input type="text" id="inventorySearch" placeholder="Buscar producto..."></div>
+                        <select id="inventoryCategory">
+                            <option value="todos">Todas las categorías</option>
+                            <option value="Hogar">Hogar</option>
+                            <option value="Industrial">Industrial</option>
+                            <option value="Válvulas">Válvulas</option>
+                            <option value="Tanques">Tanques</option>
+                        </select>
+                    </div>
+                    <div class="table-wrapper">
+                        <table class="inventory-table">
+                            <thead><tr><th>Producto</th><th>Categoría</th><th>Precio</th><th>Stock</th><th>Stock mínimo</th><th>Estado</th><th>Acciones</th></tr></thead>
+                            <tbody id="inventoryTable"></tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+            <!-- MOVIMIENTOS -->
+            <section class="admin-section" id="admin-movements">
+                <div class="admin-toolbar">
+                    <div><h2>Movimientos de almacén</h2><p>Control de entradas y salidas.</p></div>
+                    <button class="admin-primary-btn" id="newMovementBtn"><i class="fa-solid fa-plus"></i> Registrar movimiento</button>
+                </div>
+                <div class="admin-card">
+                    <div class="table-wrapper">
+                        <table><thead><tr><th>Fecha</th><th>Producto</th><th>Tipo</th><th>Cantidad</th><th>Motivo</th></tr></thead><tbody id="movementsTable"></tbody></table>
+                    </div>
+                </div>
+            </section>
+            <!-- VENTAS -->
+            <section class="admin-section" id="admin-sales">
+    <div class="admin-toolbar">
+        <div><h2>Ventas</h2><p>Pedidos de la web y ventas de tienda.</p></div>
+        <button class="admin-primary-btn" id="newSaleBtn" type="button"><i class="fa-solid fa-plus"></i> Registrar venta</button>
+    </div>
+
+    <div class="admin-stats">
+        <div class="admin-stat"><div class="stat-icon green"><i class="fa-solid fa-circle-check"></i></div><div><span>Ventas pagadas</span><strong id="statSalesPaid">0</strong></div></div>
+        <div class="admin-stat"><div class="stat-icon blue"><i class="fa-solid fa-sack-dollar"></i></div><div><span>Total vendido</span><strong id="statSalesTotal">S/ 0.00</strong></div></div>
+        <div class="admin-stat"><div class="stat-icon orange"><i class="fa-solid fa-hourglass-half"></i></div><div><span>Pedidos pendientes</span><strong id="statSalesPending">0</strong></div></div>
+        <div class="admin-stat"><div class="stat-icon purple"><i class="fa-solid fa-calendar-day"></i></div><div><span>Ventas de hoy</span><strong id="statSalesToday">0</strong></div></div>
+    </div>
+
+    <div class="admin-card">
+        <div class="table-wrapper">
+            <table>
+                <thead>
+                    <tr><th>N.º</th><th>Fecha</th><th>Cliente</th><th>Productos</th><th>Pago</th><th>Total</th><th>Estado</th><th>Acciones</th></tr>
+                </thead>
+                <tbody id="salesTable"></tbody>
+            </table>
+        </div>
+    </div>
+</section>
+            <!-- ALERTAS -->
+            <section class="admin-section" id="admin-alerts">
+                <div class="admin-toolbar"><div><h2>Alertas de stock</h2><p>Productos que requieren reposición.</p></div></div>
+                <div class="alerts-grid" id="alertsGrid"></div>
+            </section>
+        </main>
+    </div>
+</div>
+<!-- =========================================================
+     MODAL ESCÁNER QR
+========================================================= -->
+<div class="modal-overlay" id="scannerModal">
+    <div class="modal" style="max-width: 500px;">
+        <button class="modal-close" data-close="scannerModal"><i class="fa-solid fa-xmark"></i></button>
+        <div class="modal-header">
+            <span class="modal-icon"><i class="fa-solid fa-qrcode"></i></span>
+            <div><h2>Escanear Producto</h2><p>Apunta la cámara al código QR o de barras</p></div>
+        </div>
+        <div id="scannerContainer" style="width: 100%; min-height: 300px; border-radius: 8px; overflow: hidden;"></div>
+        <p style="text-align: center; margin-top: 15px; font-size: 13px; color: #666;">
+            Formato: nombre|categoría|precio|stock|stockMin|imagen.png
+        </p>
+    </div>
+</div>
+<!-- =========================================================
+     MODAL PRODUCTO
+========================================================= -->
+<div class="modal-overlay" id="productAdminModal">
+    <div class="modal admin-form-modal">
+        <button class="modal-close" data-close="productAdminModal"><i class="fa-solid fa-xmark"></i></button>
+        <div class="modal-header">
+            <span class="modal-icon"><i class="fa-solid fa-box"></i></span>
+            <div><h2 id="productModalTitle">Nuevo producto</h2><p>Información del inventario</p></div>
+        </div>
+        <form id="productAdminForm">
+            <input type="hidden" id="productEditId">
+            <div class="form-group"><label>Nombre del producto</label><input type="text" id="adminProductName" required></div>
+            <div class="form-row">
+                <div class="form-group"><label>Categoría</label><select id="adminProductCategory" required>
+                    <option value="Hogar">Hogar</option>
+                    <option value="Industrial">Industrial</option>
+                    <option value="Válvulas">Válvulas</option>
+                    <option value="Tanques">Tanques</option>
+                </select></div>
+                <div class="form-group"><label>Precio (S/)</label><input type="number" id="adminProductPrice" min="0" step="0.01" required></div>
+            </div>
+            <div class="form-row">
+                <div class="form-group"><label>Stock</label><input type="number" id="adminProductStock" min="0" required></div>
+                <div class="form-group"><label>Stock mínimo</label><input type="number" id="adminProductMinStock" min="1" value="5" required></div>
+            </div>
+            <div class="form-group"><label>Nombre de imagen</label><input type="text" id="adminProductImage" placeholder="ej: producto.png"></div>
+            <button type="submit" class="btn btn-primary submit-btn">Guardar producto</button>
+        </form>
+    </div>
+</div>
+<!-- =========================================================
+     MODAL MOVIMIENTO
+========================================================= -->
+<div class="modal-overlay" id="movementModal">
+    <div class="modal">
+        <button class="modal-close" data-close="movementModal"><i class="fa-solid fa-xmark"></i></button>
+        <div class="modal-header">
+            <span class="modal-icon"><i class="fa-solid fa-right-left"></i></span>
+            <div><h2>Registrar movimiento</h2></div>
+        </div>
+        <form id="movementForm">
+            <div class="form-group"><label>Producto</label><select id="movementProduct" required><option value="">Seleccionar producto</option></select></div>
+            <div class="form-row">
+                <div class="form-group"><label>Tipo</label><select id="movementType" required>
+                    <option value="entrada">Entrada (+)</option>
+                    <option value="salida">Salida (-)</option>
+                </select></div>
+                <div class="form-group"><label>Cantidad</label><input type="number" id="movementQty" min="1" required></div>
+            </div>
+            <div class="form-group"><label>Motivo / Observación</label><input type="text" id="movementReason" placeholder="compra, venta, ajuste..."></div>
+            <button type="submit" class="btn btn-primary submit-btn">Registrar</button>
+        </form>
+    </div>
+</div>
+<div class="modal-overlay" id="saleModal">
+    <div class="modal">
+        <button class="modal-close" data-close="saleModal" type="button"><i class="fa-solid fa-xmark"></i></button>
+        <div class="modal-header">
+            <span class="modal-icon"><i class="fa-solid fa-cash-register"></i></span>
+            <div><h2>Registrar venta</h2><p>Venta realizada en tienda</p></div>
+        </div>
+        <form id="saleForm">
+            <div class="form-row">
+                <div class="form-group"><label>Cliente</label><input type="text" id="saleCustomer" placeholder="Cliente de tienda"></div>
+                <div class="form-group"><label>Método de pago</label>
+                    <select id="saleMethod">
+                        <option>Efectivo</option>
+                        <option>Yape</option>
+                        <option>Plin</option>
+                        <option>Transferencia</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group"><label>Producto</label><select id="saleProduct"></select></div>
+                <div class="form-group"><label>Cantidad</label><input type="number" id="saleQty" min="1" value="1"></div>
+            </div>
+            <button type="button" class="small-btn" id="addSaleItemBtn"><i class="fa-solid fa-plus"></i> Agregar a la venta</button>
+
+            <div class="sale-items" id="saleItems"></div>
+            <div class="sale-total"><span>Total</span><span id="saleDraftTotal">S/ 0.00</span></div>
+
+            <button type="submit" class="btn btn-primary submit-btn">Registrar venta</button>
+        </form>
+    </div>
+</div>
+<!-- =========================================================
+     SCRIPTS
+========================================================= -->
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
