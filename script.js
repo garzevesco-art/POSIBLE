@@ -10,68 +10,13 @@
 ========================================================= */
 
 const WHATSAPP_NUMBER = "51987654321";
-const ADMIN_PASSWORD = "Hydralt";
+const ADMIN_PASSWORD = "hydralt";
 
 let cart = JSON.parse(localStorage.getItem("hydralt_cart")) || [];
 /* Productos con los que arranca cualquier navegador nuevo (clientes y otras computadoras).
    Cómo llenarlo: entra al panel > Respaldo y Excel > "Copiar productos como código inicial"
    y pega aquí el resultado, en lugar de []. */
-const PRODUCTOS_INICIALES = [
-    {
-        "id": "P001",
-        "name": "Dispensador de Agua Automático",
-        "category": "Hogar",
-        "price": 180,
-        "stock": 8,
-        "minStock": 3,
-        "image": "fil.png"
-    },
-    {
-        "id": "P002",
-        "name": "Sistema de Ósmosis Inversa",
-        "category": "Hogar",
-        "price": 250,
-        "stock": 5,
-        "minStock": 2,
-        "image": "Osmosis.png"
-    },
-    {
-        "id": "P003",
-        "name": "Tanque FRP de Alta Resistencia",
-        "category": "Tanques",
-        "price": 900,
-        "stock": 4,
-        "minStock": 2,
-        "image": "TANQUE FRP.png"
-    },
-    {
-        "id": "P004",
-        "name": "Filtro Industrial de Agua",
-        "category": "Industrial",
-        "price": 680,
-        "stock": 3,
-        "minStock": 2,
-        "image": "filtro_Industrial.png"
-    },
-    {
-        "id": "P005",
-        "name": "Válvula Automática Magnum IT",
-        "category": "Válvulas",
-        "price": 680,
-        "stock": 6,
-        "minStock": 2,
-        "image": "VALVULA AUTOMATICA, MAGNUM IT 298 742.png"
-    },
-    {
-        "id": "P006",
-        "name": "Válvula Automática Performa 268",
-        "category": "Válvulas",
-        "price": 590,
-        "stock": 7,
-        "minStock": 2,
-        "image": "VALVULA AUTOMATICA, PERFORMA 268 740.png"
-    }
-];
+const PRODUCTOS_INICIALES = [];
 
 let inventory = JSON.parse(localStorage.getItem("hydralt_inventory"));
 if (!Array.isArray(inventory)) inventory = JSON.parse(JSON.stringify(PRODUCTOS_INICIALES));
@@ -363,6 +308,20 @@ function sugerirImagen(nombre) {
 }
 
 ensureImagePicker();
+
+/* Explica en el formulario qué significa el stock mínimo */
+function ensureStockHelp() {
+    const min = document.getElementById("adminProductMinStock");
+    if (!min || document.getElementById("minStockHelp")) return;
+
+    const help = document.createElement("small");
+    help.id = "minStockHelp";
+    help.className = "claim-help";
+    help.textContent = "Cuando el stock sea igual o menor a este número, el producto aparece como Bajo y en Alertas.";
+    min.parentNode.appendChild(help);
+}
+
+ensureStockHelp();
 
 /* Crea un id nuevo que nunca se repite (P001, P002, ...) */
 function getNextProductId() {
@@ -957,13 +916,14 @@ function renderInventory() {
     inventory.forEach((product, index) => {
         const estado = getStockStatus(product);
         const row = document.createElement("tr");
+        row.className = estado.clase === "low" ? "row-low" : estado.clase === "out" ? "row-out" : "";
 
         row.innerHTML = `
             <td><strong>${escapeHTML(product.name)}</strong></td>
             <td>${escapeHTML(product.category)}</td>
             <td>S/ ${Number(product.price).toFixed(2)}</td>
-            <td>${product.stock}</td>
-            <td>${product.minStock}</td>
+            <td><input type="number" min="0" class="inline-num" data-inline="stock" data-index="${index}" value="${product.stock}" aria-label="Stock de ${escapeHTML(product.name)}"></td>
+            <td><input type="number" min="0" class="inline-num" data-inline="minStock" data-index="${index}" value="${product.minStock}" aria-label="Stock mínimo de ${escapeHTML(product.name)}"></td>
             <td><span class="status ${estado.clase}">${estado.texto}</span></td>
             <td>
                 <button type="button" class="table-action" onclick="editProduct(${index})"><i class="fa-solid fa-pen"></i></button>
@@ -995,6 +955,22 @@ function renderMovements() {
     });
 }
 
+/* Número rojo junto a "Alertas" en el menú del almacén */
+function updateAlertsBadge(cantidad) {
+    const nav = document.querySelector('.admin-nav-btn[data-admin-section="alerts"]');
+    if (!nav) return;
+
+    let badge = document.getElementById("alertsBadge");
+    if (!badge) {
+        badge = document.createElement("span");
+        badge.id = "alertsBadge";
+        badge.className = "claims-badge alerts-badge";
+        nav.appendChild(badge);
+    }
+    badge.textContent = cantidad;
+    badge.hidden = cantidad === 0;
+}
+
 function renderAlerts() {
     const grid = document.getElementById("alertsGrid");
     if (!grid) return;
@@ -1002,6 +978,7 @@ function renderAlerts() {
     grid.innerHTML = "";
 
     const lowStockProducts = inventory.filter(p => p.stock <= p.minStock);
+    updateAlertsBadge(lowStockProducts.length);
 
     if (lowStockProducts.length === 0) {
         grid.innerHTML = `
@@ -1024,6 +1001,47 @@ function renderAlerts() {
         grid.appendChild(card);
     });
 }
+
+/* Cambia el stock o el stock mínimo directamente desde la tabla del inventario */
+function updateInlineField(index, field, valor) {
+    const p = inventory[index];
+    if (!p || (field !== "stock" && field !== "minStock")) return;
+
+    const nuevo = parseInt(valor, 10);
+    if (isNaN(nuevo) || nuevo < 0) {
+        showToast("Escribe un número válido (0 o más)", true);
+        renderInventory();
+        return;
+    }
+
+    const anterior = p[field];
+    if (nuevo === anterior) return;
+    p[field] = nuevo;
+
+    if (field === "stock") {
+        const diff = nuevo - anterior;
+        movements.unshift({
+            date: new Date().toLocaleDateString(),
+            product: p.name,
+            type: diff > 0 ? "entrada" : "salida",
+            quantity: Math.abs(diff),
+            reason: "Ajuste en inventario"
+        });
+    }
+
+    refreshAll();
+
+    const estado = getStockStatus(p);
+    if (estado.clase === "out") showToast(`${p.name}: agotado. Ya aparece en Alertas.`);
+    else if (estado.clase === "low") showToast(`${p.name}: stock bajo. Ya aparece en Alertas.`);
+    else showToast(`${p.name} actualizado.`);
+}
+
+document.addEventListener("change", (e) => {
+    const campo = e.target && e.target.closest ? e.target.closest("[data-inline]") : null;
+    if (!campo) return;
+    updateInlineField(parseInt(campo.dataset.index, 10), campo.dataset.inline, campo.value);
+});
 
 function editProduct(index) {
     const product = inventory[index];
@@ -1097,8 +1115,23 @@ if (productAdminForm) {
         };
 
         if (old) {
+            const diff = product.stock - old.stock;
             inventory[editId] = product;
-            showToast("Producto actualizado");
+
+            if (diff !== 0) {
+                movements.unshift({
+                    date: new Date().toLocaleDateString(),
+                    product: product.name,
+                    type: diff > 0 ? "entrada" : "salida",
+                    quantity: Math.abs(diff),
+                    reason: "Edición del producto"
+                });
+            }
+
+            const estado = getStockStatus(product);
+            if (estado.clase === "out") showToast("Producto actualizado: agotado, ya aparece en Alertas");
+            else if (estado.clase === "low") showToast("Producto actualizado: stock bajo, ya aparece en Alertas");
+            else showToast("Producto actualizado");
         } else {
             inventory.push(product);
 
