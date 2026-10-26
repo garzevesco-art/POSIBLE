@@ -16,7 +16,62 @@ let cart = JSON.parse(localStorage.getItem("hydralt_cart")) || [];
 /* Productos con los que arranca cualquier navegador nuevo (clientes y otras computadoras).
    Cómo llenarlo: entra al panel > Respaldo y Excel > "Copiar productos como código inicial"
    y pega aquí el resultado, en lugar de []. */
-const PRODUCTOS_INICIALES = [];
+const PRODUCTOS_INICIALES = [
+    {
+        "id": "P001",
+        "name": "Dispensador de Agua Automático",
+        "category": "Hogar",
+        "price": 180,
+        "stock": 8,
+        "minStock": 3,
+        "image": "fil.png"
+    },
+    {
+        "id": "P002",
+        "name": "Sistema de Ósmosis Inversa",
+        "category": "Hogar",
+        "price": 250,
+        "stock": 5,
+        "minStock": 2,
+        "image": "Osmosis.png"
+    },
+    {
+        "id": "P003",
+        "name": "Tanque FRP de Alta Resistencia",
+        "category": "Tanques",
+        "price": 900,
+        "stock": 4,
+        "minStock": 2,
+        "image": "TANQUE FRP.png"
+    },
+    {
+        "id": "P004",
+        "name": "Filtro Industrial de Agua",
+        "category": "Industrial",
+        "price": 680,
+        "stock": 3,
+        "minStock": 2,
+        "image": "filtro_Industrial.png"
+    },
+    {
+        "id": "P005",
+        "name": "Válvula Automática Magnum IT",
+        "category": "Válvulas",
+        "price": 680,
+        "stock": 6,
+        "minStock": 2,
+        "image": "VALVULA AUTOMATICA, MAGNUM IT 298 742.png"
+    },
+    {
+        "id": "P006",
+        "name": "Válvula Automática Performa 268",
+        "category": "Válvulas",
+        "price": 590,
+        "stock": 7,
+        "minStock": 2,
+        "image": "VALVULA AUTOMATICA, PERFORMA 268 740.png"
+    }
+];
 
 let inventory = JSON.parse(localStorage.getItem("hydralt_inventory"));
 if (!Array.isArray(inventory)) inventory = JSON.parse(JSON.stringify(PRODUCTOS_INICIALES));
