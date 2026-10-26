@@ -6163,3 +6163,409 @@ body::after {
 @media (max-width: 850px) {
     .stores-grid { grid-template-columns: 1fr; }
 }
+/* ---------------------------------------------------------
+   1. ARREGLOS BASE
+   - Las ventanas (formularios) ahora quedan por encima del panel.
+   - Cabecera del chatbot y avisos.
+--------------------------------------------------------- */
+ 
+.modal-overlay { z-index: 6000; }
+.toast-container { z-index: 7000; }
+ 
+.chatbot-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 16px 18px;
+    background: linear-gradient(135deg, #7c4dff, #9d68ff);
+    color: #fff;
+}
+ 
+ 
+/* ---------------------------------------------------------
+   2. BOTÓN VOLVER ARRIBA
+--------------------------------------------------------- */
+ 
+.btn-top {
+    position: fixed;
+    left: 22px;
+    bottom: 24px;
+    width: 46px;
+    height: 46px;
+    border: 0;
+    border-radius: 50%;
+    background: var(--dark);
+    color: #fff;
+    display: none;
+    place-items: center;
+    z-index: 1100;
+    box-shadow: 0 8px 22px rgba(0, 0, 0, 0.2);
+    transition: 0.3s;
+}
+ 
+.btn-top:hover {
+    background: var(--primary);
+    transform: translateY(-3px);
+}
+ 
+ 
+/* ---------------------------------------------------------
+   3. BOTONES DE ABAJO EN EL MENÚ DEL ALMACÉN
+--------------------------------------------------------- */
+ 
+.admin-sidebar-bottom {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+ 
+#closeAdminBtn {
+    width: 100%;
+    border: 0;
+    background: rgba(79, 220, 255, 0.15);
+    color: #7fe3ff;
+    border-radius: 10px;
+    padding: 11px;
+    font-size: 11px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    transition: 0.3s;
+}
+ 
+#closeAdminBtn:hover {
+    background: rgba(79, 220, 255, 0.28);
+    color: #ffffff;
+}
+ 
+ 
+/* ---------------------------------------------------------
+   4. VENTAS
+--------------------------------------------------------- */
+ 
+#addSaleItemBtn {
+    padding: 10px 14px;
+    font-size: 11px;
+}
+ 
+.sale-items {
+    margin: 12px 0;
+    border: 1px dashed var(--border);
+    border-radius: 12px;
+    padding: 4px 12px;
+    min-height: 46px;
+}
+ 
+.sale-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    padding: 9px 0;
+    border-bottom: 1px solid #edf2f5;
+    font-size: 12px;
+    color: var(--dark);
+}
+ 
+.sale-item:last-child {
+    border-bottom: 0;
+}
+ 
+.sale-empty {
+    text-align: center;
+    color: var(--muted);
+    font-size: 11px;
+    padding: 12px 0;
+}
+ 
+.sale-total {
+    display: flex;
+    justify-content: space-between;
+    font-weight: 800;
+    color: var(--dark);
+    margin-bottom: 15px;
+}
+ 
+ 
+/* ---------------------------------------------------------
+   5. RESPALDO Y EXCEL
+--------------------------------------------------------- */
+ 
+#backupBtn {
+    width: 100%;
+    border: 0;
+    background: rgba(255, 255, 255, 0.10);
+    color: #ffffff;
+    border-radius: 10px;
+    padding: 11px;
+    font-size: 11px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    transition: 0.3s;
+}
+ 
+#backupBtn:hover {
+    background: rgba(255, 255, 255, 0.20);
+}
+ 
+.backup-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+ 
+.backup-actions .admin-primary-btn,
+.backup-actions .small-btn {
+    width: 100%;
+    padding: 13px;
+    font-size: 12px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+ 
+.backup-note {
+    margin-top: 16px;
+    font-size: 11px;
+    color: var(--muted);
+    line-height: 1.6;
+}
+ 
+ 
+/* ---------------------------------------------------------
+   6. LIBRO DE RECLAMACIONES
+--------------------------------------------------------- */
+ 
+.claims-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: #fff;
+    font-weight: 600;
+    font-size: 12px;
+    text-decoration: none;
+    background: rgba(255, 255, 255, 0.12);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    padding: 6px 12px;
+    border-radius: 999px;
+    transition: 0.3s;
+}
+ 
+.claims-link i { color: #62ddff; }
+.claims-link:hover { background: #fff; color: var(--dark); }
+.claims-link:hover i { color: var(--primary); }
+.footer-bottom .claims-link { margin-bottom: 14px; }
+ 
+.claim-modal { width: min(780px, 100%); }
+ 
+.claim-provider {
+    background: #eef7fb;
+    border-left: 4px solid var(--primary);
+    border-radius: 10px;
+    padding: 12px 15px;
+    font-size: 12px;
+    color: var(--dark);
+    line-height: 1.7;
+    margin-bottom: 18px;
+}
+ 
+.claim-title {
+    font-size: 14px;
+    color: var(--dark);
+    margin: 18px 0 12px;
+    padding-bottom: 6px;
+    border-bottom: 1px solid var(--border);
+}
+ 
+.claim-help { display: block; margin-top: 6px; font-size: 11px; color: var(--muted); line-height: 1.5; }
+.claim-note { font-size: 11px; color: var(--muted); line-height: 1.6; margin: 10px 0 14px; }
+.claim-error { color: var(--danger); font-size: 12px; font-weight: 700; margin-bottom: 12px; }
+ 
+.claim-done { text-align: center; padding: 10px 0; }
+.claim-done-icon { font-size: 48px; color: var(--success); margin-bottom: 10px; }
+.claim-done h3 { color: var(--dark); margin-bottom: 10px; }
+.claim-done p { font-size: 13px; margin-bottom: 8px; }
+.claim-done-actions { display: flex; flex-direction: column; gap: 10px; margin-top: 18px; }
+.claim-done-actions .admin-primary-btn,
+.claim-done-actions .small-btn { padding: 13px; font-size: 12px; cursor: pointer; }
+ 
+.claim-table { width: 100%; border-collapse: collapse; font-size: 12px; }
+.claim-table td { border: 1px solid var(--border); padding: 8px 10px; vertical-align: top; white-space: pre-wrap; }
+.claim-table td.l { width: 32%; background: #f4f9fc; font-weight: 700; color: var(--dark); }
+.claim-admin-actions { display: flex; flex-wrap: wrap; gap: 10px; }
+.claim-admin-actions button { cursor: pointer; padding: 11px 14px; font-size: 11px; }
+ 
+.claims-badge {
+    margin-left: auto;
+    background: var(--danger);
+    color: #fff;
+    border-radius: 999px;
+    font-size: 10px;
+    font-weight: 800;
+    padding: 2px 8px;
+}
+ 
+ 
+/* ---------------------------------------------------------
+   7. CHATBOT: BOTONES RÁPIDOS Y ENLACES
+--------------------------------------------------------- */
+ 
+.chatbot-chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    padding: 10px 15px;
+    background: #fff;
+    border-top: 1px solid var(--border);
+}
+ 
+.chatbot-chips button {
+    border: 1px solid #d9ccff;
+    background: #f5f0ff;
+    color: #5b34d6;
+    border-radius: 999px;
+    padding: 6px 11px;
+    font-size: 11px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.25s;
+}
+ 
+.chatbot-chips button:hover {
+    background: #7c4dff;
+    color: #fff;
+}
+ 
+.message-content a {
+    color: #5b34d6;
+    font-weight: 700;
+    text-decoration: underline;
+    word-break: break-word;
+}
+ 
+ 
+/* ---------------------------------------------------------
+   8. DÓNDE ESTAMOS (TIENDAS Y MAPAS)
+--------------------------------------------------------- */
+ 
+.stores-section { background: linear-gradient(180deg, #f2f9fc, #ffffff); }
+ 
+.stores-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+}
+ 
+.store-card {
+    background: #fff;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    box-shadow: var(--shadow);
+}
+ 
+.store-info { padding: 26px; }
+ 
+.store-type {
+    display: inline-block;
+    background: #e7f8ff;
+    color: var(--primary);
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 5px 11px;
+    border-radius: 999px;
+    margin-bottom: 10px;
+}
+ 
+.store-info h3 { font-size: 24px; color: var(--dark); margin-bottom: 4px; }
+ 
+.store-name {
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--muted);
+    margin-bottom: 14px;
+}
+ 
+.store-line {
+    display: flex;
+    gap: 10px;
+    font-size: 13px;
+    line-height: 1.6;
+    margin-bottom: 8px;
+}
+ 
+.store-line i { color: var(--primary); margin-top: 4px; width: 16px; }
+ 
+.store-actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 18px; }
+ 
+.store-btn-ghost {
+    border: 1px solid var(--dark);
+    color: var(--dark);
+    background: transparent;
+}
+ 
+.store-btn-ghost:hover { background: var(--dark); color: #fff; }
+ 
+.store-map { width: 100%; height: 280px; border: 0; margin-top: auto; }
+ 
+@media (max-width: 850px) {
+    .stores-grid { grid-template-columns: 1fr; }
+}
+ 
+ 
+/* ---------------------------------------------------------
+   9. CÓDIGO DE PRODUCTOS INICIALES (dentro de Respaldo y Excel)
+--------------------------------------------------------- */
+ 
+.seed-text {
+    width: 100%;
+    margin-top: 14px;
+    padding: 10px;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    font-family: Consolas, monospace;
+    font-size: 11px;
+    color: var(--dark);
+    background: #f7fafc;
+    resize: vertical;
+}
+ 
+ 
+/* ---------------------------------------------------------
+   10. INVENTARIO: EDICIÓN RÁPIDA Y ALERTAS
+--------------------------------------------------------- */
+ 
+.inline-num {
+    width: 72px;
+    padding: 7px 8px;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    font-size: 12px;
+    font-weight: 700;
+    text-align: center;
+    color: var(--dark);
+    background: #fff;
+}
+ 
+.inline-num:focus {
+    outline: none;
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(0, 142, 214, 0.12);
+}
+ 
+.row-low td { background: #fffaf0; }
+.row-out td { background: #fff5f5; }
+ 
+.alerts-badge { background: var(--warning); }
